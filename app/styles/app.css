@@ -1,0 +1,93 @@
+html {
+  line-height: 1.15;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  // color: @color;
+  // background: @white-background-color;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[contenteditable] {
+  outline: 1px solid #e4e3e3;
+}
+
+#viewBox {
+  display: flex;
+  padding: 5px;
+}
+
+#editor {
+  display: flex;
+  flex: 1 0;
+}
+
+#pathlist {
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+#pathlist input[type=number] {
+  max-width: 7ch;
+}
+
+#header {
+  display: flex;
+  align-items: baseline;
+}
+
+#svg {
+  display: flex;
+  flex: 1;
+  border: 1px solid grey;
+  border-left: 0;
+}
+
+svg {
+  flex: 1;
+  border: 1px solid #e4e3e3;
+}
+
+#input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+.command {
+  padding: 5px;
+}
+
+.command + .command {
+  border-top: 1px solid #e4e3e3;
+}
+
+.command-type {
+
+}
+.command-attrs {
+  display: flex;
+}
+
+.selected {
+  background: #d8d8d8;
+}

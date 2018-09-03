@@ -1,0 +1,13 @@
+<div class="point-type">
+  {{command.displayType}}
+
+  <button {{action 'toggleRelative'}}>
+    {{#if command.relative}}
+      rel
+    {{else}}
+      abs
+    {{/if}}
+  </button>
+</div>
+
+{{component (concat command.displayType '-command') command=command.coordinates onchange=onchange}}

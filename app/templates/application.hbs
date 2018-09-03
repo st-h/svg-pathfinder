@@ -1,5 +1,23 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<section id="header">
+  viewbox {{view-box viewBox=viewBox onchange=(action encode)}}
+  <label for="zoom-slider">zoom</label>{{input id="zoom-slider" type="range" min="1" max="100" value=zoom}}
 
-{{outlet}}
+  <label for="nudge-value">nudge</label>{{input id="nudge-value" type="number" min="0.001" max="100" value=nudge}}
+
+  <button {{action 'selectAll'}}>select all</button>
+  <button {{action 'switchToRelative'}}>make all relative</button>
+  <button {{action 'switchToAbsolute'}}>make all absolute</button>
+</section>
+
+<section id="editor">
+  <section id="pathlist">
+    {{path-list path=path onchange=(action encode) onselect=(action 'selected')}}
+  </section>
+  <section id="svg" style="max-width: {{zoom}}%;">
+    {{{svgDisplay}}}
+  </section>
+</section>
+
+<section id="input">
+  {{textarea value=code rows=6 key-up=(action parse) placeholder="paste your <svg>...</svg> here"}}
+</section>
