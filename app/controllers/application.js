@@ -164,6 +164,7 @@ export default Controller.extend(EKMixin, {
 
     this.set('path', internalPath);
     //TODO currently transforms are not supported
+    // https://stackoverflow.com/questions/17824145/parse-svg-transform-attribute-with-javascript
     // const transform = pathElement.getAttribute('transform');
     // console.log('transform: ' + transform);
 
@@ -174,6 +175,8 @@ export default Controller.extend(EKMixin, {
    * grabs our internal path model and converts it to html (displayed in the editors code block)
    **/
   encode() {
+    //TODO add https://github.com/svg/svgo
+    // https://jakearchibald.github.io/svgomg/
     const svgElem = this.createSVG(this.getSVGPath());
     this.set('code', svgElem.outerHTML);
     this.createSVGDisplay();
